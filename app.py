@@ -15,7 +15,9 @@ model_options = {
     "Command R+": "cohere/command-r-plus",
 }
 
-selected_model = st.selectbox("Select a model:", options=list(model_options.keys()))
+selected_model = st.selectbox(
+    "Select a translation model:", options=list(model_options.keys())
+)
 
 if st.button("Translate"):
     if input_text.strip():

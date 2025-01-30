@@ -7,7 +7,7 @@ import time
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 
-def translate_text(text, model="anthropic/claude-3-haiku"):
+def translate_text(text, model):
     """
     Translate English text to BM using specified model on OpenRouter
     """
@@ -22,9 +22,12 @@ def translate_text(text, model="anthropic/claude-3-haiku"):
 
     # Refined system prompt for better translations
     system_prompt = (
-        "You are a professional translator. Translate the following English text into fluent, natural, "
-        "and grammatically correct Bahasa Malaysia. Ensure the translation sounds like it was originally "
-        "written in BM by a native speaker."
+        "You are an expert Malay linguist and translator. Translate the following English text into **fluent, natural, and idiomatic Bahasa Malaysia**, ensuring that:\n"
+        "1. The translation **flows naturally**, as if originally written in Malay.\n"
+        "2. Sentence structure follows **Malay grammar rules** and avoids direct AI-literal translations.\n"
+        "3. Use **appropriate Malay idioms or phrases** where suitable to enhance readability.\n"
+        "4. Ensure a **formal yet conversational tone** suitable for blog articles or professional documents.\n\n"
+        "Now, translate the following text:"
     )
 
     data = {
