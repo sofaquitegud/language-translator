@@ -9,7 +9,7 @@ API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 def translate_text(text, model):
     """
-    Translate English text to BM using specified model on OpenRouter
+    Translate Malay text to Jawi using specified model.
     """
     if not API_KEY:
         return "Error: API key is missing. Please set your OpenRouter API key."
@@ -22,12 +22,12 @@ def translate_text(text, model):
 
     # Refined system prompt for better translations
     system_prompt = (
-        "You are an expert Malay linguist and translator. Translate the following English text into **fluent, natural, and idiomatic Bahasa Malaysia**, ensuring that:\n"
-        "1. The translation **flows naturally**, as if originally written in Malay.\n"
-        "2. Sentence structure follows **Malay grammar rules** and avoids direct AI-literal translations.\n"
-        "3. Use **appropriate Malay idioms or phrases** where suitable to enhance readability.\n"
-        "4. Ensure a **formal yet conversational tone** suitable for blog articles or professional documents.\n\n"
-        "Now, translate the following text:"
+        "You are an expert Malay linguist specializing in Jawi script. Convert the following Malay text written in Rumi to **accurate and natural Jawi script**, ensuring that:\n"
+        "1. The conversion follows **standard Jawi orthography** as commonly used in Malaysia.\n"
+        "2. Maintain correct **spelling conventions** for loanwords and native Malay terms.\n"
+        "3. Ensure readability and correctness based on **Dewan Bahasa dan Pustaka (DBP) guidelines**.\n"
+        "4. Avoid direct AI-literal transliteration errors by considering proper Jawi equivalents.\n\n"
+        "Now, convert the following Rumi text to Jawi:"
     )
 
     data = {

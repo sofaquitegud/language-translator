@@ -1,9 +1,9 @@
 import streamlit as st
 from translate import translate_text
 
-st.title("AI-Powered English to Malay Translator")
+st.title("AI-Powered Rumi to Jawi Translator")
 
-st.write("Paste your English text below:")
+st.write("Paste your Malay text below:")
 
 input_text = st.text_area("Input text", placeholder="Type or paste your text here...")
 
